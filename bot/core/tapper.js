@@ -354,6 +354,7 @@ class Tapper {
         withCredentials: true,
       });
       const proxy_result = await this.#check_proxy(http_client, proxy);
+      console.log(proxy_result, "----------- proxy_result");
       if (!proxy_result) {
         
         for(let i = 0; i < 10; i ++) {
