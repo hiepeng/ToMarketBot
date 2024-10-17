@@ -214,7 +214,7 @@ class Tapper {
 
       const jsonData = {
         init_data: decodeURIComponent(this.#clean_tg_web_data(tgWebData)),
-        invite_code: "00003Ozq",
+        invite_code: "00027L8R",
         is_bot: false,
       };
 
@@ -267,6 +267,7 @@ class Tapper {
   }
 
   async #get_access_token(tgWebData, http_client) {
+    console.log("--------------- login get access token")
     try {
       const response = await http_client.post(
         `${this.API_URL}/tomarket-game/v1/user/login`,
