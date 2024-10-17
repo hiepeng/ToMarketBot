@@ -355,6 +355,14 @@ class Tapper {
       });
       const proxy_result = await this.#check_proxy(http_client, proxy);
       if (!proxy_result) {
+        
+        for(let i = 0; i < 10; i ++) {
+          logger.error(
+            `<ye>[${this.bot_name}]</ye> | ${this.session_name} | Proxy IP: ${ip} -- fail!!!!`
+          );
+          await sleep(1);
+        }
+
         http_client = axios.create({
           headers: this.headers,
           withCredentials: true,
