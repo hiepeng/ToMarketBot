@@ -116,6 +116,7 @@ class Tapper {
   }
 
   async #get_tg_web_data() {
+    console.log("------------ get_tg_web_data")
     try {
       const tmp = new FdyTmp({
         fileName: `${this.bot_name}.fdy.tmp`,
@@ -193,6 +194,8 @@ class Tapper {
           url: app.webviewUrl,
         })
       );
+
+      console.log("------- Api.messages.RequestWebView ")
 
       const authUrl = result.url;
       const tgWebData = authUrl.split("#", 2)[1];
@@ -326,6 +329,7 @@ class Tapper {
   }
 
   async run(proxy) {
+    console.log("--------------- run")
     let http_client;
     let access_token_created_time = 0;
     let next_stars_check = 0;
@@ -359,6 +363,7 @@ class Tapper {
       });
     }
     while (true) {
+      console.log("----------------- start loop while")
       try {
         const currentTime = _.floor(Date.now() / 1000);
         if (currentTime - access_token_created_time >= 3600) {
@@ -376,6 +381,9 @@ class Tapper {
             tg_web_data,
             http_client
           );
+
+          console.log("--------- get token")
+
           http_client.defaults.headers[
             "authorization"
           ] = `${get_token?.data?.access_token}`;

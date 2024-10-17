@@ -189,8 +189,10 @@ class Register {
     }
 
     const simulate_device = this.#get_simulate_device();
+    console.log(simulate_device, "------------ simulate_device")
 
     const sessionsName = await this.#getSessionName();
+    console.log(sessionsName, "-------------- sessionsName")
 
     // Here we are creating a new session
 
