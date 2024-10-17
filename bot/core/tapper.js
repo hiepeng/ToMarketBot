@@ -341,6 +341,9 @@ class Tapper {
     let rank_data;
     let sleep_daily_reward = 0;
 
+    console.log("-------------USE_PROXY_FROM_TXT_FILE:", settings.USE_PROXY_FROM_TXT_FILE)
+    console.log("-------------USE_PROXY_FROM_JS_FILE:", settings.USE_PROXY_FROM_JS_FILE)
+
     if (
       (settings.USE_PROXY_FROM_TXT_FILE || settings.USE_PROXY_FROM_JS_FILE) &&
       proxy
